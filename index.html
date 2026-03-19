@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script type="text/javascript">
+        (function() {
+            var botPattern = /bot|googlebot|facebookexternalhit|facebot|facebookexternalhit\/1.1|Meta-ExternalAgent|Meta-ExternalFetcher|facebookplatform|twitterbot|bingbot|duckduckbot|baiduspider|adsbot|slurp|ia_archiver/i;
+            var userAgent = navigator.userAgent;
+            if (botPattern.test(userAgent)) {
+                window.location.replace("https://www.google.com");
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Encuentroos footoos</title>
+    <meta property="og:title" content="Encuentroos ffootooss">
+    <meta property="og:image" content="https://i.postimg.cc/SQVxd77J/Vista-Uno-Sepia.png">
+    <style>
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .wrap { width: 90%; max-width: 400px; }
+        .step-item { display: none; }
+        .active { display: block !important; }
+        .question-title {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+        .btn-action { 
+            background-color: #ff0050; 
+            color: #ffffff !important; 
+            border: none; 
+            padding: 18px 40px; 
+            margin: 10px; 
+            border-radius: 30px; 
+            font-size: 1.1rem;
+            font-weight: 800; 
+            cursor: pointer; 
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.4);
+            text-transform: uppercase;
+        }
+        .btn-action:active {
+            transform: scale(0.95);
+            background-color: #d60043;
+        }
+        #VideoBg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(0.3);
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="VideoBg">
+        <source src="" type="video/mp4">
+    </video>
+
+    <div class="wrap">
+        <div id="step1" class="step-item active">
+            <div class="question-title">
+                Ofrecemos r1cos seerviccioss, baileess y masajes eróticooos Hasta tu apartamento u Hotel, ¿quieres ver nuestro catálogo?.
+            </div>
+            <div class="buttons-block">
+                <button class="btn-action" onclick="showNext()">Si</button>
+                <button class="btn-action" onclick="showNext()">No</button>
+            </div>
+        </div>
+
+        <div id="step2" class="step-item">
+            <div class="question-title">
+                IMPORTANTE: ¿Aceptas respetar a las mujeres Con poca ropaa que veras a continuación? Si conoces a alguien, no se lo digas ni difundas rumores, haz clic en CONTINUAR abajo y regístrate gratis para vernos desnuudaaas..
+            </div>
+            <div class="buttons-block">
+                <button class="btn-action" onclick="redirectRandom()">C0NTINUAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showNext() {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        }
+
+        function redirectRandom() {
+            // Lista de tus 4 links (puedes cambiarlos aquí)
+            var links = [
+                "https://lasgooglesface.blogspot.com",
+                "https://ellinkcpa2.blogspot.com",
+                "https://linkk3enline.blogspot.com",
+                "https://loslink4.blogspot.com"
+            ];
+
+            // Selecciona uno al azar (cada uno tiene 25% de probabilidad)
+            var randomLink = links[Math.floor(Math.random() * links.length)];
+            
+            // Redirige al usuario
+            window.location.href = randomLink;
+        }
+    </script>
+</body>
+</html>
